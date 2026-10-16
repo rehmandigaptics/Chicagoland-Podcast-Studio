@@ -1,0 +1,29 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./styles/styles.css";
+@import "./styles/premium.css";
+@import "./styles/inner.css";
+
+/* Next.js / React resets that should not fight the design system */
+body {
+  margin: 0;
+}
+
+/* Lenis + ScrollTrigger: never let CSS smooth-scroll or transform
+   transitions fight scrubbed GSAP transforms (causes page jitter). */
+html {
+  scroll-behavior: auto !important;
+}
+
+html.lenis .studio-image > img,
+html.lenis .set-card img,
+html.lenis .inner-hero-media img,
+html.lenis .image-panel img,
+html.lenis .equipment-photo img,
+html.lenis .gallery-shot img,
+html.lenis .gallery-mosaic .gallery-shot img,
+html.lenis .mission-media img,
+html.lenis .cta-backdrop img,
+html.lenis .experience-media img,
+html.lenis .team-photo img {
+  transition: none !important;
+}
