@@ -33,23 +33,35 @@ export default function Header() {
             aria-controls="navigation"
             aria-expanded="false"
             aria-label="Toggle menu"
-            className="navbar-toggler"
+            className="navbar-toggler menu-toggle"
             data-bs-target="#navigation"
             data-bs-toggle="collapse"
             type="button"
           >
-            <span className="navbar-toggler-icon" />
+            <span className="menu-toggle-copy" aria-hidden="true">
+              <span className="menu-toggle-open">MENU</span>
+              <span className="menu-toggle-close">CLOSE</span>
+            </span>
+            <span className="menu-toggle-bars" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
           </button>
           <div className="collapse navbar-collapse" id="navigation">
+            <p className="mobile-menu-label">[ MENU ]</p>
             <ul className="navbar-nav mx-auto">
-              {nav.map((item) => (
+              {nav.map((item, index) => (
                 <li key={item.href}>
                   <Link
                     className="nav-link"
                     href={item.href}
                     aria-current={pathname === item.href ? "page" : undefined}
                   >
-                    {item.label}
+                    <span className="nav-link-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="nav-link-label">{item.label}</span>
                   </Link>
                 </li>
               ))}

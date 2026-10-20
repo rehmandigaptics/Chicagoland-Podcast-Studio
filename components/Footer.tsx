@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BackToTop from "@/components/BackToTop";
 import FooterYear from "@/components/FooterYear";
 
 export default function Footer() {
@@ -61,15 +60,22 @@ export default function Footer() {
           <span>
             © <FooterYear /> CHICAGOLAND PODCAST STUDIO
           </span>
-          <a
-            className="footer-powered"
-            href="https://360growthlab.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by <span>360 Growth Lab</span>
-          </a>
-          <BackToTop />
+          <p className="footer-powered">
+            Powered by{" "}
+            <a
+              href="https://360growthlab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="360 Growth Lab"
+            >
+              <img
+                src="/images/360growthlab.png"
+                alt="360 Growth Lab"
+                width={120}
+                height={28}
+              />
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -1,8 +1,19 @@
 "use client";
 
-import type { MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 
 export default function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setVisible(window.scrollY > 420);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const onClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
@@ -28,7 +39,12 @@ export default function BackToTop() {
   };
 
   return (
-    <a className="footer-back-top" href="#top" onClick={onClick}>
+    <a
+      className={`back-to-top${visible ? " is-visible" : ""}`}
+      href="#top"
+      onClick={onClick}
+      aria-label="Back to top"
+    >
       BACK TO TOP ↑
     </a>
   );

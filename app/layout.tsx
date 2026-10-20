@@ -3,6 +3,7 @@ import { Anton, Barlow_Condensed, Inter } from "next/font/google";
 import BootstrapClient from "@/components/BootstrapClient";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import BackToTop from "@/components/BackToTop";
 import SiteEffects from "@/components/SiteEffects";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
         <SmoothScroll />
         <SiteEffects />
         <BootstrapClient />
