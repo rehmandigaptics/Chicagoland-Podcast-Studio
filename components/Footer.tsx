@@ -26,12 +26,19 @@ export default function Footer() {
         </div>
         <p>Podcast &amp; video production • Chicagoland, Illinois</p>
         <div className="footer-columns">
-          <div className="brand footer-brand">
-            <strong>
-              CHICAGO<span>LAND</span>
-            </strong>
-            <small>PODCAST + VIDEO STUDIO</small>
-          </div>
+          <Link
+            className="brand footer-brand brand--logo"
+            href="/"
+            aria-label="Chicagoland Podcast Studio home"
+          >
+            <img
+              className="brand-logo brand-logo--dark"
+              src="/images/logo-chicagoland.png"
+              alt="Chicagoland Podcast Studio"
+              width={240}
+              height={62}
+            />
+          </Link>
           <div className="footer-nav">
             <span>[ NAVIGATION ]</span>
             <div className="footer-nav-grid">

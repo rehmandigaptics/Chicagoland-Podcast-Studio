@@ -1531,6 +1531,13 @@ a:hover .premium-arrow,button:hover .premium-arrow{transform:translate(3px,-3px)
   gap:8px;
   line-height:.85;
   padding-top:2px;
+  justify-self:start;
+  justify-content:flex-start;
+  text-align:left;
+}
+.footer-columns>.footer-brand,
+.footer-columns>a.footer-brand{
+  justify-self:start;
 }
 .footer-brand strong{
   font:900 clamp(28px,2.5vw,34px)/1 var(--font-barlow),sans-serif;

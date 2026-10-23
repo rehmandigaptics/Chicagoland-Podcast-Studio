@@ -21,13 +21,16 @@ export default function Header() {
         <div className="container-fluid shell">
           <Link
             aria-label="Chicagoland Podcast Studio home"
-            className="brand"
+            className="brand brand--logo"
             href="/"
           >
-            <strong>
-              CHICAGO<span>LAND</span>
-            </strong>
-            <small>PODCAST + VIDEO STUDIO</small>
+            <img
+              className="brand-logo brand-logo--black"
+              src="/images/logo-chicagoland-black.png"
+              alt="Chicagoland Podcast Studio"
+              width={220}
+              height={56}
+            />
           </Link>
           <button
             aria-controls="navigation"

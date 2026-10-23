@@ -36,6 +36,10 @@ export const metadata: Metadata = {
   },
   description:
     "Chicagoland Podcast Studio offers podcast recording and video production experiences for Illinois creators, founders, and brands.",
+  icons: {
+    icon: "/images/logo-chicagoland.png",
+    apple: "/images/logo-chicagoland.png",
+  },
 };
 
 export const viewport = {

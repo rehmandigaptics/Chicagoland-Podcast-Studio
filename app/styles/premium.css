@@ -4,6 +4,15 @@ body{font-synthesis:none;-webkit-font-smoothing:antialiased}::selection{backgrou
 .shell{max-width:1700px;padding-left:clamp(24px,5.1vw,100px);padding-right:clamp(24px,5.1vw,100px)}
 .topbar{height:84px;background:rgba(240,240,236,.96);position:sticky;top:0;backdrop-filter:blur(20px);border-color:#b7b7b1}
 .brand strong{font-size:32px;letter-spacing:-1.4px}.brand small{letter-spacing:2.4px}
+.brand--logo{display:inline-flex;align-items:center;min-width:0;line-height:0}
+.brand-logo{display:block;width:auto;height:clamp(42px,4.4vw,56px);object-fit:contain}
+.brand-logo--light{mix-blend-mode:lighten}
+.brand-logo--black{mix-blend-mode:normal}
+.footer-brand.brand--logo{
+  align-self:start;justify-self:start;justify-content:flex-start;
+  margin:0;margin-right:auto;text-align:left;width:max-content;max-width:100%;
+}
+.footer-brand .brand-logo{height:clamp(48px,5vw,62px);margin:0}
 .navbar-nav{gap:clamp(15px,2.7vw,44px)}.navbar .nav-link{font-size:13px;position:relative}.navbar .nav-link:after{content:'';height:1px;background:var(--blue);position:absolute;bottom:5px;left:8px;right:100%;transition:right .3s}.navbar .nav-link:hover:after{right:8px}
 .icon-arrow,.icon-diag{width:21px;height:21px;display:inline-block;vertical-align:middle;flex:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}.icon-diag{width:17px;height:17px}.icon-play{width:20px;height:20px;transform:translateX(1px)}
 a:hover>.icon-arrow,.service-item:hover .icon-arrow{transform:translateX(6px)}a:hover>.icon-diag{transform:translate(3px,-3px)}
@@ -91,6 +100,8 @@ a:hover>.icon-arrow,.service-item:hover .icon-arrow{transform:translateX(6px)}a:
   .topbar .shell{align-items:center}
   .brand strong{font-size:28px;letter-spacing:-1px}
   .brand small{letter-spacing:2px;font-size:8px}
+  .brand-logo{height:40px}
+  .footer-brand .brand-logo{height:48px}
   .navbar-collapse{
     background:linear-gradient(180deg,#f4f4f0 0%,#ecece7 100%);
     border-top:1px solid #c9c9c3;
