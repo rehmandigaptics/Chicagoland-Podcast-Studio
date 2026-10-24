@@ -4,9 +4,7 @@ import InnerEffects from "@/components/InnerEffects";
 import PricingMain from "@/components/PricingMain";
 
 export const metadata: Metadata = {
-  title: "Podcast Studio Pricing",
-  description:
-    "Explore one, two and three-hour podcast recording packages and published prices.",
+  title: "Podcast Studio Pricing"
 };
 
 export default function PricingPage() {

@@ -4,9 +4,7 @@ import BookingMain from "@/components/BookingMain";
 import InnerEffects from "@/components/InnerEffects";
 
 export const metadata: Metadata = {
-  title: "Book a Session",
-  description:
-    "Contact Chicagoland Podcast Studio to enquire about bookings in Oakbrook Terrace.",
+  title: "Book a Session"
 };
 
 export default function BookingPage() {

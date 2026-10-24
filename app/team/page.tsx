@@ -4,9 +4,7 @@ import InnerEffects from "@/components/InnerEffects";
 import TeamMain from "@/components/TeamMain";
 
 export const metadata: Metadata = {
-  title: "Team",
-  description:
-    "Meet the Chicagoland Podcast Studio team — technically sharp, easy to work with, and focused on a smooth production experience.",
+  title: "Team"
 };
 
 export default function TeamPage() {
