@@ -37,3 +37,5 @@ npm run dev      # development server
 npm run build    # production build
 npm run start    # serve production build
 ```
+
+<!-- CI/CD verification push test: 2026-10-24 06:15:51 -->
