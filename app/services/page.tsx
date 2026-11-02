@@ -4,9 +4,7 @@ import InnerEffects from "@/components/InnerEffects";
 import ServicesMain from "@/components/ServicesMain";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Coworking, dedicated desks, meeting rooms, event space, virtual offices, mailbox, community, and a professional podcast studio at Workspace Junction.",
+  title: "Services"
 };
 
 export default function ServicesPage() {

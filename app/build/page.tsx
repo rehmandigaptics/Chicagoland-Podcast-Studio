@@ -4,9 +4,7 @@ import BuildMain from "@/components/BuildMain";
 import InnerEffects from "@/components/InnerEffects";
 
 export const metadata: Metadata = {
-  title: "Build Program",
-  description:
-    "Custom podcast studio builds with expert gear selection, on-site installation, and setup. Build programs start at $35,000.",
+  title: "Build Program"
 };
 
 export default function BuildPage() {

@@ -31,11 +31,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Chicagoland Podcast Studio | Make Yourself Heard",
+    default: "Chicagoland Podcast Studio",
     template: "%s | Chicagoland Podcast Studio",
   },
-  description:
-    "Chicagoland Podcast Studio offers podcast recording and video production experiences for Illinois creators, founders, and brands.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   icons: {
     icon: "/images/logo-chicagoland.png",
     apple: "/images/logo-chicagoland.png",

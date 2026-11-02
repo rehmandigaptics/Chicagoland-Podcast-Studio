@@ -4,9 +4,7 @@ import InnerEffects from "@/components/InnerEffects";
 import StudioMain from "@/components/StudioMain";
 
 export const metadata: Metadata = {
-  title: "The Studio",
-  description:
-    "Explore Chicagoland Podcast Studio at Workspace Junction in Oakbrook Terrace: professional microphones, multi-camera recording, sound-treated studio, flexible sets and recording formats.",
+  title: "The Studio"
 };
 
 export default function StudioPage() {
