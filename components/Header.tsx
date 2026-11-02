@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,8 +13,41 @@ const nav = [
   { href: "/build", label: "Build" },
 ];
 
+function closeMobileMenu() {
+  const menu = document.getElementById("navigation");
+  if (!menu?.classList.contains("show")) return;
+
+  const toggle = document.querySelector<HTMLButtonElement>(
+    ".menu-toggle[data-bs-toggle='collapse']"
+  );
+  const bootstrap = (
+    window as Window & {
+      bootstrap?: {
+        Collapse: {
+          getOrCreateInstance: (
+            el: Element,
+            options?: { toggle?: boolean }
+          ) => { hide: () => void };
+        };
+      };
+    }
+  ).bootstrap;
+
+  if (bootstrap?.Collapse) {
+    bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
+  } else {
+    menu.classList.remove("show");
+  }
+
+  toggle?.setAttribute("aria-expanded", "false");
+}
+
 export default function Header() {
   const pathname = usePathname();
+
+  useEffect(() => {
+    closeMobileMenu();
+  }, [pathname]);
 
   return (
     <header className="topbar">
@@ -23,6 +57,7 @@ export default function Header() {
             aria-label="Chicagoland Podcast Studio home"
             className="brand brand--logo"
             href="/"
+            onClick={closeMobileMenu}
           >
             <img
               className="brand-logo brand-logo--black"
@@ -60,6 +95,7 @@ export default function Header() {
                     className="nav-link"
                     href={item.href}
                     aria-current={pathname === item.href ? "page" : undefined}
+                    onClick={closeMobileMenu}
                   >
                     <span className="nav-link-index">
                       {String(index + 1).padStart(2, "0")}
@@ -69,7 +105,7 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <Link className="solid-btn nav-btn" href="/booking">
+            <Link className="solid-btn nav-btn" href="/booking" onClick={closeMobileMenu}>
               BOOK A SESSION{" "}
               <svg
                 aria-hidden="true"
