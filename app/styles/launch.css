@@ -1,0 +1,344 @@
+/* Podcast Launch page. Builds on .hw/.ap/.hp shared styles. */
+
+.pl-intro,
+.pl-team,
+.pl-include {
+  padding-block: calc(32 * var(--u));
+}
+.pl .hw-title {
+  letter-spacing: 0.01em;
+}
+.pl .hw-rule {
+  margin-top: calc(9 * var(--u));
+}
+
+/* Intro */
+.pl-intro-grid {
+  display: grid;
+  grid-template-columns: calc(370 * var(--u)) 1fr;
+  align-items: center;
+  column-gap: calc(16 * var(--u));
+}
+.pl-intro-title {
+  font-size: calc(36 * var(--u));
+  line-height: 1;
+  white-space: nowrap;
+}
+.pl-intro-text {
+  margin-top: calc(12 * var(--u));
+  font-size: calc(11.2 * var(--u));
+  line-height: calc(15 * var(--u));
+  color: var(--hw-text);
+}
+.pl-intro-media img {
+  width: 100%;
+  height: auto;
+}
+
+/* 4x2 service cards */
+.pl-services .ap-services-grid {
+  grid-template-columns: calc(195 * var(--u)) 1fr;
+}
+.pl-services .ap-services-title {
+  font-size: calc(35 * var(--u));
+  line-height: calc(31 * var(--u));
+}
+.pl-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.pl-cards .ap-card-media {
+  inset: 0 0 0 40%;
+}
+.pl-cards .ap-card-body h3 {
+  font-size: calc(14.5 * var(--u));
+  line-height: 1;
+}
+.pl-cards .ap-card-body p {
+  font-size: calc(8.8 * var(--u));
+  line-height: calc(11 * var(--u));
+}
+.pl-cards .ap-card-media img {
+  object-position: 80% 50%;
+}
+
+/* Seven steps */
+.pl-steps {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.pl-steps .ap-step {
+  padding: 0 calc(8 * var(--u));
+}
+.pl-steps .ap-step h3 {
+  font-size: calc(15 * var(--u));
+}
+.pl-steps .ap-step p {
+  font-size: calc(9.4 * var(--u));
+  line-height: calc(12 * var(--u));
+}
+
+/* Your launch, our production team */
+.pl-team {
+  position: relative;
+  overflow: hidden;
+  background: #0c0d10;
+  color: #fff;
+}
+.pl-team .hw-in {
+  position: static;
+}
+.pl-team .hw-title {
+  color: #fff;
+}
+.pl-team-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+}
+.pl-team-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 30%;
+}
+.pl-team-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0c0d10 0, rgba(12, 13, 16, 0.4) 25%, rgba(12, 13, 16, 0) 55%);
+}
+.pl-team-grid {
+  display: grid;
+  grid-template-columns: calc(200 * var(--u)) calc(198 * var(--u)) calc(186 * var(--u)) 1fr;
+  column-gap: calc(12 * var(--u));
+  align-items: center;
+}
+.pl-team-grid > * {
+  position: relative;
+  z-index: 1;
+}
+.pl-team-title {
+  font-size: calc(30 * var(--u));
+  line-height: calc(27 * var(--u));
+}
+.pl-panel {
+  align-self: stretch;
+  padding: calc(10 * var(--u)) calc(12 * var(--u));
+  border-radius: calc(3 * var(--u));
+  background: #fff;
+  color: var(--hw-ink);
+}
+.pl-panel h3 {
+  font: 800 calc(17 * var(--u)) / 1 var(--hw-cond);
+}
+.pl-panel ul {
+  display: grid;
+  gap: calc(4 * var(--u));
+  margin-top: calc(9 * var(--u));
+  font-size: calc(9.6 * var(--u));
+  line-height: calc(12 * var(--u));
+  color: var(--hw-text);
+}
+.pl-panel li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(8 * var(--u));
+}
+.pl-panel .hw-check {
+  margin-top: calc(2 * var(--u));
+}
+
+/* What your launch can include */
+.pl-include {
+  border-bottom: calc(1 * var(--u)) solid var(--hw-line);
+}
+.pl-include-grid {
+  display: grid;
+  grid-template-columns: calc(190 * var(--u)) repeat(4, minmax(0, 1fr)) calc(120 * var(--u));
+  align-items: center;
+}
+.pl-include-title {
+  font-size: calc(26 * var(--u));
+  line-height: calc(24 * var(--u));
+}
+.pl-deliver {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 calc(12 * var(--u));
+  text-align: center;
+}
+.pl-deliver::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(4 * var(--u));
+  bottom: calc(4 * var(--u));
+  width: calc(1 * var(--u));
+  background: #c4c6cc;
+}
+.pl-deliver img {
+  width: 100%;
+  height: calc(66 * var(--u));
+  object-fit: contain;
+  border-radius: calc(4 * var(--u));
+}
+.pl-deliver-media {
+  position: relative;
+  width: 100%;
+}
+.pl-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+  border: calc(1.5 * var(--u)) solid #fff;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+.pl-play svg {
+  width: calc(10 * var(--u));
+  height: calc(10 * var(--u));
+  margin-left: calc(1.5 * var(--u));
+}
+.pl-deliver h3 {
+  margin-top: calc(7 * var(--u));
+  font: 700 calc(12.5 * var(--u)) / 1.1 var(--hw-semi);
+}
+.pl-deliver p {
+  font: 500 calc(10.5 * var(--u)) / 1.2 var(--hw-semi);
+  color: var(--hw-text);
+}
+.pl-include-note {
+  position: relative;
+  padding-left: calc(16 * var(--u));
+  font-size: calc(9 * var(--u));
+  line-height: calc(12 * var(--u));
+  color: var(--hw-text);
+}
+.pl-include-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(4 * var(--u));
+  bottom: calc(4 * var(--u));
+  width: calc(1 * var(--u));
+  background: #c4c6cc;
+}
+.pl-include-note span {
+  display: grid;
+  place-items: center;
+  width: calc(14 * var(--u));
+  height: calc(14 * var(--u));
+  margin-bottom: calc(5 * var(--u));
+  border-radius: 50%;
+  background: var(--hw-blue);
+  color: #fff;
+  font: 700 calc(9 * var(--u)) / 1 var(--hw-body);
+}
+
+/* Tablet and mobile */
+@media (max-width: 899.98px) {
+  .pl-intro,
+  .pl-team,
+  .pl-include {
+    padding-block: 40px;
+  }
+  .pl-intro-grid,
+  .pl-team-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .pl-intro-title {
+    white-space: normal;
+  }
+  .pl-intro-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .pl-services .ap-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pl-cards .ap-card-body h3 {
+    font-size: 18px;
+  }
+  .pl-cards .ap-card-body p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pl-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pl-steps .ap-step h3 {
+    font-size: 18px;
+  }
+  .pl-steps .ap-step p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .pl-team-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    margin-top: 22px;
+    order: 2;
+  }
+  .pl-team-media::after {
+    display: none;
+  }
+  .pl-team {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .pl-panel {
+    padding: 16px;
+  }
+  .pl-panel h3 {
+    font-size: 20px;
+  }
+  .pl-panel ul {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .pl-include-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+  .pl-include-grid > div:first-child,
+  .pl-include-note {
+    grid-column: 1 / -1;
+  }
+  .pl-deliver::before,
+  .pl-include-note::before {
+    display: none;
+  }
+  .pl-deliver img {
+    height: 90px;
+  }
+  .pl-deliver h3,
+  .pl-deliver p {
+    font-size: 15px;
+  }
+  .pl-include-note {
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 640px) {
+  .pl-cards,
+  .pl-steps {
+    grid-template-columns: 1fr;
+  }
+}

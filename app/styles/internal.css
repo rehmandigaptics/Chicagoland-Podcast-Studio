@@ -1,0 +1,451 @@
+/* Internal Communications Podcasts page. Builds on .hw/.ap/.pm/.hp shared styles. */
+
+.ic .hw-title {
+  letter-spacing: 0.01em;
+}
+.ic .hw-rule {
+  margin-top: calc(9 * var(--u));
+}
+.ic-message,
+.ic-process,
+.ic-private,
+.ic-who,
+.ic-flow {
+  padding-block: calc(32 * var(--u));
+}
+.ic-message,
+.ic-process,
+.ic-who {
+  border-bottom: calc(1 * var(--u)) solid var(--hw-line);
+}
+.ic-private,
+.ic-flow {
+  background: #0c0d10;
+  color: #fff;
+}
+.ic-private .hw-title,
+.ic-flow .hw-title,
+.ic-dark-title {
+  color: #fff;
+}
+.ic-hero .hp-hero-copy {
+  padding-top: calc(40 * var(--u));
+}
+.ic-hero .hp-hero-img {
+  object-position: 75% 35%;
+}
+.ic .ap-services-title {
+  font-size: calc(32 * var(--u));
+  line-height: calc(29 * var(--u));
+}
+.ic-card .ap-card-media img {
+  object-position: 80% 30%;
+}
+
+/* Make every message count */
+.ic-message-grid {
+  display: grid;
+  grid-template-columns: calc(200 * var(--u)) calc(1.5 * var(--u)) calc(220 * var(--u)) 1fr;
+  column-gap: calc(22 * var(--u));
+  align-items: center;
+}
+.ic-message .hw-vline {
+  display: block;
+  height: calc(100 * var(--u));
+  background: #a9abb1;
+}
+.ic-message-text {
+  font-size: calc(11.2 * var(--u));
+  line-height: calc(15 * var(--u));
+  color: var(--hw-text);
+}
+.ic-message-media {
+  aspect-ratio: 2000 / 496;
+  border-radius: calc(6 * var(--u));
+  overflow: hidden;
+}
+.ic-message-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* From studio to staff */
+.ic-process-grid {
+  display: grid;
+  grid-template-columns: calc(170 * var(--u)) 1fr;
+  align-items: center;
+  row-gap: calc(14 * var(--u));
+}
+.ic-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: calc(26 * var(--u));
+}
+.ic-steps li {
+  position: relative;
+  text-align: center;
+}
+.ic-steps li:not(:last-child)::after {
+  content: "\203A";
+  position: absolute;
+  top: calc(8 * var(--u));
+  right: calc(-21 * var(--u));
+  font: 700 calc(28 * var(--u)) / 1 var(--hw-body);
+  color: var(--hw-blue);
+}
+.ic-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+}
+.ic-step-top .hw-ico {
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+}
+.ic-steps h3 {
+  margin-top: calc(9 * var(--u));
+  font: 800 calc(15 * var(--u)) / 1 var(--hw-cond);
+}
+.ic-steps p {
+  margin-top: calc(5 * var(--u));
+  font-size: calc(9.6 * var(--u));
+  line-height: calc(12 * var(--u));
+  color: var(--hw-text);
+}
+.hw-options.ic-options {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(10 * var(--u));
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+.ic-options i {
+  display: none;
+}
+.ic-options p,
+.hw-options.ic-options p + p {
+  gap: calc(7 * var(--u));
+  padding: calc(5 * var(--u)) calc(10 * var(--u));
+  border: calc(1 * var(--u)) solid #cfd9f5;
+  border-radius: calc(8 * var(--u));
+  background: #e6edfb;
+}
+.ic-options b {
+  margin-right: calc(4 * var(--u));
+  padding: calc(3 * var(--u)) calc(6 * var(--u));
+  border: calc(1 * var(--u)) solid #b9c8f0;
+  border-radius: calc(5 * var(--u));
+  background: rgba(255, 255, 255, 0.6);
+  font-size: calc(11 * var(--u));
+}
+.ic-options span {
+  font-size: calc(8.2 * var(--u));
+  white-space: normal;
+}
+
+/* Private by design */
+.ic-private {
+  position: relative;
+  overflow: hidden;
+}
+.ic-private .hw-in {
+  position: static;
+}
+.ic-private-grid {
+  display: grid;
+  grid-template-columns: calc(300 * var(--u)) 1fr;
+  column-gap: calc(18 * var(--u));
+  align-items: center;
+}
+.ic-private-grid > div:first-child,
+.ic-private-cards {
+  position: relative;
+  z-index: 1;
+}
+.ic-phone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 512 * var(--u) + 120 * var(--u));
+  width: calc(230 * var(--u));
+}
+.ic-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+.ic-phone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0c0d10 0, rgba(12, 13, 16, 0) 30%, rgba(12, 13, 16, 0) 60%, #0c0d10 100%);
+}
+.ic-private-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(10 * var(--u));
+}
+.ic-private-cards article {
+  padding: calc(10 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u));
+  border: calc(1 * var(--u)) solid rgba(255, 255, 255, 0.6);
+  border-radius: calc(8 * var(--u));
+  background: rgba(12, 13, 16, 0.6);
+}
+.ic-private-cards article p {
+  font-size: calc(10.4 * var(--u)) !important;
+  line-height: calc(13 * var(--u)) !important;
+}
+.ic-private-cards h3,
+.ic-who-card h3 {
+  display: flex;
+  align-items: center;
+  gap: calc(9 * var(--u));
+  font: 800 calc(14 * var(--u)) / 1 var(--hw-cond);
+}
+.ic-private-cards .hw-ico,
+.ic-who-card .hw-ico {
+  flex: none;
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+  color: #2f6bff;
+}
+.ic-private-cards article p {
+  margin-top: calc(7 * var(--u));
+  font-size: calc(9.6 * var(--u));
+  line-height: calc(12 * var(--u));
+  color: rgba(255, 255, 255, 0.86);
+}
+.ic-private-note {
+  grid-column: 1 / -1;
+  font: italic 400 calc(9 * var(--u)) / 1.3 var(--hw-body);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+/* Who it helps */
+.ic-who-grid {
+  display: grid;
+  grid-template-columns: calc(150 * var(--u)) repeat(4, minmax(0, 1fr));
+  column-gap: calc(12 * var(--u));
+  align-items: center;
+}
+.ic-who-card {
+  position: relative;
+  height: calc(150 * var(--u));
+  border-radius: calc(4 * var(--u));
+  overflow: hidden;
+  background: #12141a;
+  color: #fff;
+}
+.ic-who-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 22%;
+}
+.ic-who-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(8, 9, 12, 0.95) 0, rgba(8, 9, 12, 0.5) 45%, rgba(8, 9, 12, 0) 70%);
+}
+.ic-who-card > div {
+  position: absolute;
+  z-index: 1;
+  left: calc(12 * var(--u));
+  right: calc(12 * var(--u));
+  bottom: calc(11 * var(--u));
+}
+.ic-who-card p {
+  margin-top: calc(6 * var(--u));
+  font-size: calc(9.6 * var(--u));
+  line-height: calc(12 * var(--u));
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* What we handle: titles may run onto two lines */
+.ic-handle .pm-stage h3.ic-handle-title {
+  display: block;
+  white-space: normal;
+  line-height: 1;
+}
+.ic-handle .pm-stage-body {
+  min-width: 0;
+}
+.ic-handle .pm-support-grid {
+  grid-template-columns: calc(130 * var(--u)) repeat(3, minmax(0, 1fr));
+  column-gap: calc(10 * var(--u));
+}
+.ic-handle .pm-stage {
+  grid-template-columns: 44% 1fr;
+}
+.ic-handle .pm-stage img {
+  object-position: 40% 50%;
+}
+.ic-handle .pm-stage-body {
+  padding: calc(9 * var(--u)) calc(6 * var(--u)) calc(10 * var(--u)) calc(9 * var(--u));
+}
+.ic-handle .pm-stage ul {
+  font-size: calc(8.4 * var(--u));
+  line-height: calc(11 * var(--u));
+}
+.ic-handle .pm-stage li {
+  gap: calc(5 * var(--u));
+}
+
+/* One message, many ways */
+.ic-flow-grid {
+  display: grid;
+  grid-template-columns: calc(270 * var(--u)) calc(40 * var(--u)) 1fr;
+  align-items: center;
+}
+.ic-flow-slash {
+  justify-self: center;
+  width: calc(3 * var(--u));
+  height: calc(46 * var(--u));
+  background: var(--hw-blue);
+  transform: rotate(18deg);
+}
+.ic-flow-steps .ic-flow-phone {
+  margin-left: auto;
+  width: calc(22 * var(--u));
+  height: calc(30 * var(--u));
+}
+.ic-flow-title {
+  font-size: calc(24 * var(--u));
+  line-height: calc(23 * var(--u));
+}
+.ic-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: calc(40 * var(--u));
+}
+.ic-flow-steps li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  padding: calc(9 * var(--u)) calc(14 * var(--u));
+  border: calc(1.5 * var(--u)) solid rgba(255, 255, 255, 0.8);
+  border-radius: calc(8 * var(--u));
+}
+.ic-flow-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-30 * var(--u));
+  width: calc(20 * var(--u));
+  height: calc(16 * var(--u));
+  background: var(--hw-blue);
+  clip-path: polygon(0 30%, 55% 30%, 55% 0, 100% 50%, 55% 100%, 55% 70%, 0 70%);
+  transform: translateY(-50%);
+}
+.ic-flow-steps .hw-ico {
+  flex: none;
+  width: calc(28 * var(--u));
+  height: calc(28 * var(--u));
+  color: #2f6bff;
+}
+.ic-flow-steps h3 {
+  font: 800 calc(14 * var(--u)) / 1 var(--hw-cond);
+}
+
+@media (max-width: 899.98px) {
+  .ic-message,
+  .ic-process,
+  .ic-private,
+  .ic-who,
+  .ic-flow {
+    padding-block: 40px;
+  }
+  .ic-hero .hp-hero-copy {
+    padding-top: 30px;
+  }
+  .ic-message-grid,
+  .ic-process-grid,
+  .ic-private-grid,
+  .ic-who-grid,
+  .ic-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .ic-message .hw-vline {
+    display: none;
+  }
+  .ic-message-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .ic-message-media {
+    aspect-ratio: 2000 / 496;
+  }
+  .ic-phone {
+    position: relative;
+    left: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .ic-phone::after {
+    display: none;
+  }
+  .ic-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+  .ic-steps li::after,
+  .ic-flow-steps li::after {
+    display: none;
+  }
+  .ic-steps h3 {
+    font-size: 18px;
+  }
+  .ic-steps p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .hw-options.ic-options {
+    grid-column: auto;
+  }
+  .ic-private-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ic-private-cards h3,
+  .ic-who-card h3,
+  .ic-flow-steps h3 {
+    font-size: 18px;
+  }
+  .ic-private-cards article p,
+  .ic-who-card p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .ic-private-note {
+    font-size: 13px;
+  }
+  .ic-who-card {
+    height: 220px;
+  }
+  .ic-flow-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .ic-flow-slash {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ic-steps,
+  .ic-private-cards {
+    grid-template-columns: 1fr;
+  }
+}

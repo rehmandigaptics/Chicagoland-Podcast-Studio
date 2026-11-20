@@ -2,6 +2,173 @@
 @import "./styles/styles.css";
 @import "./styles/premium.css";
 @import "./styles/inner.css";
+@import "./styles/home.css";
+@import "./styles/how.css";
+@import "./styles/audio.css";
+@import "./styles/work.css";
+@import "./styles/hosting.css";
+@import "./styles/launch.css";
+@import "./styles/management.css";
+@import "./styles/marketing.css";
+@import "./styles/internal.css";
+@import "./styles/resources.css";
+@import "./styles/video.css";
+@import "./styles/why.css";
+@import "./styles/booking.css";
+
+@media (min-width: 992px) {
+  .navbar .nav-link {
+    white-space: nowrap;
+  }
+  .navbar-nav {
+    gap: clamp(6px, 1.9vw, 44px) !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  .navbar-nav {
+    gap: 4px !important;
+  }
+  .navbar .nav-link {
+    font-size: 12.5px;
+    padding-inline: 6px !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-nav {
+    gap: 0 !important;
+  }
+  .navbar .nav-link {
+    font-size: 11.5px;
+    padding-inline: 4px !important;
+  }
+  .topbar .brand-logo {
+    max-width: 120px;
+  }
+  .topbar .nav-btn {
+    padding-inline: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-link,
+  .navbar .nav-drop-toggle {
+    font-family: var(--font-barlow), "Barlow Condensed", sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+    text-transform: uppercase !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar .nav-link,
+  .navbar .nav-drop-toggle {
+    font-size: 15px !important;
+  }
+}
+
+/* Services dropdown */
+.nav-drop {
+  position: relative;
+}
+.nav-drop-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-drop-caret {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s;
+}
+.nav-drop.is-open .nav-drop-caret {
+  transform: rotate(180deg);
+}
+.nav-drop-panel {
+  display: none;
+}
+.nav-drop.is-open .nav-drop-panel {
+  display: block;
+}
+.nav-drop-panel ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-drop-panel a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #dfe3ec;
+  border-radius: 8px;
+  background: #fff;
+  color: #0b0b0c;
+  font: 600 16px/1.2 var(--font-barlow-semi), "Barlow Semi Condensed", sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.nav-drop-panel a:hover,
+.nav-drop-panel a[aria-current="page"] {
+  border-color: #0b4ff5;
+  background: #f2f6ff;
+}
+.nav-drop-panel .hw-ico {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: #0b4ff5;
+}
+@media (min-width: 992px) {
+  .nav-drop-panel {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 1000;
+    width: 470px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(10, 20, 50, 0.18);
+    transform: translateX(-38%);
+  }
+  .nav-drop-panel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -12px;
+    height: 12px;
+  }
+}
+@media (max-width: 991.98px) {
+  .nav-drop-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .nav-drop-caret {
+    margin-left: auto;
+  }
+  .nav-drop-panel {
+    padding: 4px 0 14px;
+  }
+  .nav-drop-panel ul {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Next.js / React resets that should not fight the design system */
 body {
@@ -26,4 +193,35 @@ html.lenis .cta-backdrop img,
 html.lenis .experience-media img,
 html.lenis .team-photo img {
   transition: none !important;
+}
+
+/* Footer: rule — brand — rule on one line */
+.site-footer-minimal {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px clamp(16px, 2.6vw, 40px);
+  background: #f5f6f8;
+}
+.site-footer-minimal .site-footer-rule {
+  flex: 1;
+  height: 1.5px;
+  background: #174cff;
+}
+.site-footer-minimal .site-footer-brand {
+  flex: none;
+  padding: 0;
+  font: 700 13px/1 var(--font-barlow-semi), "Barlow Semi Condensed", sans-serif;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+@media (max-width: 575.98px) {
+  .site-footer-minimal { gap: 12px; }
+  .site-footer-minimal .site-footer-brand { font-size: 10.5px; letter-spacing: 0.06em; }
+}
+.site-footer-minimal { justify-content: center; }
+.site-footer-minimal .site-footer-rule { flex: 0 1 320px; height: 1px; }
+
+.navbar .nav-link:after {
+  height: 2px;
 }

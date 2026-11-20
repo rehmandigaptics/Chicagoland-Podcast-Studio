@@ -1,0 +1,360 @@
+/* Podcast Hosting page. Builds on .hw/.ap/.wk/.hp shared styles. */
+
+.ph-home,
+.ph-platforms,
+.ph-simpler,
+.ph-handle {
+  padding-block: calc(32 * var(--u));
+}
+.ph .hw-title {
+  letter-spacing: 0.01em;
+}
+.ph .hw-rule {
+  margin-top: calc(9 * var(--u));
+}
+
+/* Hero */
+.ph-hero .hp-hero-img {
+  object-position: 85% 30%;
+}
+.ph-hero .hp-hero-copy {
+  padding-top: calc(48 * var(--u));
+}
+.ph-hero-sub {
+  margin: calc(8 * var(--u)) 0 0 calc(2 * var(--u));
+  font: 800 calc(15 * var(--u)) / 1 var(--hw-cond);
+  letter-spacing: 0.04em;
+}
+.ph-hero .hp-hero-desc {
+  margin-top: calc(6 * var(--u));
+}
+
+/* One home */
+.ph-home-grid {
+  display: grid;
+  grid-template-columns: calc(360 * var(--u)) 1fr;
+  align-items: center;
+  column-gap: calc(16 * var(--u));
+}
+.ph-home-title {
+  font-size: calc(36 * var(--u));
+  line-height: calc(31 * var(--u));
+}
+.ph-home-text {
+  margin-top: calc(12 * var(--u));
+  font-size: calc(11.2 * var(--u));
+  line-height: calc(15 * var(--u));
+  color: var(--hw-text);
+}
+.ph-home-media img {
+  width: 100%;
+  height: auto;
+}
+
+/* Service cards: shared .ap-card; text needs a bit more room here */
+.ph .ap-services-title {
+  font-size: calc(36 * var(--u));
+  line-height: calc(32 * var(--u));
+}
+.ph .ap-card-media {
+  inset: 0 0 0 42%;
+}
+.ph-card--setup .ap-card-media img {
+  object-position: 80% 50%;
+}
+.ph-card--distribution .ap-card-media img,
+.ph-card--analytics .ap-card-media img,
+.ph-card--rss .ap-card-media img,
+.ph-card--publishing .ap-card-media img,
+.ph-card--player .ap-card-media img {
+  object-position: 85% 50%;
+}
+
+/* Platforms */
+.ph-platforms {
+  border-bottom: calc(1 * var(--u)) solid var(--hw-line);
+}
+.ph-platforms-grid {
+  display: grid;
+  grid-template-columns: calc(200 * var(--u)) repeat(5, minmax(0, 1fr));
+  align-items: center;
+}
+.ph-platforms-title {
+  font-size: calc(26 * var(--u));
+  line-height: calc(24 * var(--u));
+}
+.ph-platform {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+  height: calc(76 * var(--u));
+  text-align: center;
+}
+.ph-platform::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(4 * var(--u));
+  bottom: calc(4 * var(--u));
+  width: calc(1 * var(--u));
+  background: #c4c6cc;
+}
+.ph-platform img {
+  width: calc(44 * var(--u));
+  height: calc(44 * var(--u));
+  object-fit: contain;
+}
+.ph-platform img.is-wide {
+  width: calc(116 * var(--u));
+}
+.ph-platform-icon .hw-ico {
+  width: calc(42 * var(--u));
+  height: calc(42 * var(--u));
+}
+.ph-platform h3 {
+  font: 700 calc(15 * var(--u)) / 1 var(--hw-semi);
+}
+.ph-platform p {
+  margin-top: calc(-4 * var(--u));
+  font-size: calc(8.5 * var(--u));
+  color: #55575c;
+}
+
+/* Process: five steps */
+.ph-steps {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Simpler way */
+.ph-simpler {
+  position: relative;
+  overflow: hidden;
+  background: #0c0d10;
+  color: #fff;
+}
+.ph-simpler .hw-in {
+  position: static;
+}
+.ph-simpler .hw-title {
+  color: #fff;
+}
+.ph-simpler-grid {
+  display: grid;
+  grid-template-columns: calc(210 * var(--u)) calc(290 * var(--u)) 1fr;
+  align-items: center;
+  column-gap: calc(18 * var(--u));
+}
+.ph-simpler-grid > div:first-child,
+.ph-simpler-list {
+  position: relative;
+  z-index: 1;
+}
+.ph-simpler-title {
+  font-size: calc(32 * var(--u));
+  line-height: calc(28 * var(--u));
+}
+.ph-simpler-list {
+  display: grid;
+  gap: calc(6 * var(--u));
+}
+.ph-simpler-list li {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  padding: calc(4 * var(--u)) calc(12 * var(--u));
+  border: calc(1 * var(--u)) solid rgba(255, 255, 255, 0.5);
+  border-radius: calc(3 * var(--u));
+  background: rgba(12, 13, 16, 0.75);
+}
+.ph-simpler-list .hw-ico {
+  width: calc(24 * var(--u));
+  height: calc(22 * var(--u));
+  color: #2f6bff;
+}
+.ph-simpler-list h3 {
+  font: 800 calc(15 * var(--u)) / 1 var(--hw-cond);
+}
+.ph-simpler-list p {
+  margin-top: calc(3 * var(--u));
+  font-size: calc(9.5 * var(--u));
+  color: rgba(255, 255, 255, 0.85);
+}
+.ph-simpler-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+}
+.ph-simpler-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 45%;
+}
+.ph-simpler-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0c0d10 0, rgba(12, 13, 16, 0.6) 22%, rgba(12, 13, 16, 0) 50%);
+}
+
+/* What we can handle */
+.ph-handle {
+  border-bottom: calc(1 * var(--u)) solid var(--hw-line);
+}
+.ph-handle-grid {
+  display: grid;
+  grid-template-columns: calc(200 * var(--u)) 1fr 1fr;
+  align-items: center;
+}
+.ph-handle-title {
+  font-size: calc(32 * var(--u));
+  line-height: calc(28 * var(--u));
+}
+.ph-handle-list {
+  display: grid;
+  gap: calc(6 * var(--u));
+  padding: 0 calc(20 * var(--u));
+  font-size: calc(10.5 * var(--u));
+  line-height: calc(14 * var(--u));
+  color: var(--hw-text);
+}
+.ph-handle-list + .ph-handle-list {
+  border-left: calc(1 * var(--u)) solid #c4c6cc;
+}
+.ph-handle-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(10 * var(--u));
+}
+.ph-handle-list .hw-check {
+  margin-top: calc(2.5 * var(--u));
+}
+
+/* More ways: five items */
+.ph-more-grid {
+  grid-template-columns: calc(190 * var(--u)) repeat(5, minmax(0, 1fr));
+}
+.ph-more .ap-related-title {
+  font-size: calc(26 * var(--u));
+  line-height: calc(24 * var(--u));
+}
+.ph-more .ap-related-item {
+  padding: 0 calc(10 * var(--u)) 0 calc(14 * var(--u));
+}
+.ph-more .ap-related-item .hw-ico {
+  width: calc(26 * var(--u));
+  height: calc(24 * var(--u));
+}
+.ph-more .ap-related-item h3 {
+  font-size: calc(13.5 * var(--u));
+}
+.ph-more .ap-related-item p {
+  font-size: calc(9.2 * var(--u));
+}
+
+/* Tablet and mobile */
+@media (max-width: 899.98px) {
+  .ph-home,
+  .ph-platforms,
+  .ph-simpler,
+  .ph-handle {
+    padding-block: 40px;
+  }
+  .ph-hero .hp-hero-copy {
+    padding-top: 30px;
+  }
+  .ph-hero-sub {
+    margin: 14px 0 0;
+    font-size: 17px;
+  }
+  .ph-home-grid,
+  .ph-simpler-grid,
+  .ph-handle-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .ph-home-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .ph .ap-card-media {
+    inset: 0 0 0 45%;
+  }
+  .ph-platforms-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 0;
+  }
+  .ph-platforms-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .ph-platform {
+    height: auto;
+  }
+  .ph-platform::before {
+    display: none;
+  }
+  .ph-platform img {
+    width: 48px;
+    height: 48px;
+  }
+  .ph-platform img.is-wide {
+    width: 110px;
+  }
+  .ph-platform h3 {
+    font-size: 14px;
+  }
+  .ph-platform p {
+    margin: 0;
+    font-size: 12px;
+  }
+  .ph-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ph-simpler-list h3 {
+    font-size: 18px;
+  }
+  .ph-simpler-list p {
+    font-size: 14px;
+  }
+  .ph-simpler-media {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8;
+  }
+  .ph-simpler-media::after {
+    display: none;
+  }
+  .ph-handle-list {
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .ph-handle-list + .ph-handle-list {
+    border-left: 0;
+  }
+  .ph-more-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ph-more .ap-related-item h3 {
+    font-size: 17px;
+  }
+  .ph-more .ap-related-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ph-platforms-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ph-steps,
+  .ph-more-grid {
+    grid-template-columns: 1fr;
+  }
+}

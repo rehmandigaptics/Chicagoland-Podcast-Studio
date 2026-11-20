@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Barlow_Condensed, Inter } from "next/font/google";
+import { Anton, Barlow_Condensed, Barlow_Semi_Condensed, Inter } from "next/font/google";
 import BootstrapClient from "@/components/BootstrapClient";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -22,6 +22,13 @@ const barlow = Barlow_Condensed({
   display: "swap",
 });
 
+const barlowSemi = Barlow_Semi_Condensed({
+  weight: ["500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-barlow-semi",
+  display: "swap",
+});
+
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -39,8 +46,8 @@ export const metadata: Metadata = {
     follow: false,
   },
   icons: {
-    icon: "/images/logo-chicagoland.png",
-    apple: "/images/logo-chicagoland.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
@@ -52,9 +59,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${barlow.variable} ${inter.variable}`}
+      className={`${anton.variable} ${barlow.variable} ${barlowSemi.variable} ${inter.variable}`}
     >
-      <body className="premium-rebuild" id="top">
+      <body className="premium-rebuild" id="top" suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />

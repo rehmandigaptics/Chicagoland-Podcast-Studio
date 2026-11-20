@@ -1,0 +1,234 @@
+/* Podcast Management page. Builds on .hw/.ap/.ph/.hp shared styles. */
+
+.pm-why,
+.pm-helps,
+.pm-support {
+  padding-block: calc(32 * var(--u));
+}
+.pm .ap-hero .hp-hero-img {
+  object-position: 75% 30%;
+}
+.pm .hw-title {
+  letter-spacing: 0.01em;
+}
+.pm .hw-rule {
+  margin-top: calc(9 * var(--u));
+}
+.pm-title {
+  font-size: calc(30 * var(--u));
+  line-height: calc(27 * var(--u));
+}
+.pm-why,
+.pm-helps,
+.pm-support {
+  border-bottom: calc(1 * var(--u)) solid var(--hw-line);
+}
+
+/* Why it matters: three photo cards */
+.pm-why-grid {
+  display: grid;
+  grid-template-columns: calc(190 * var(--u)) repeat(3, minmax(0, 1fr));
+  column-gap: calc(12 * var(--u));
+  align-items: stretch;
+}
+.pm-why-grid > div:first-child {
+  align-self: center;
+}
+.pm-why-card {
+  height: auto;
+  min-height: calc(118 * var(--u));
+}
+.pm-why-card .ap-card-body {
+  padding-bottom: calc(12 * var(--u));
+}
+.pm-why-card .ap-card-media {
+  inset: 0 0 0 40%;
+}
+.pm-why-card .ap-card-media img {
+  object-position: 85% 50%;
+}
+.pm-why-card .ap-card-body h3 {
+  font-size: calc(18 * var(--u));
+}
+.pm-why-card .ap-card-body p {
+  font-size: calc(10 * var(--u));
+  line-height: calc(12.5 * var(--u));
+}
+
+/* What your producer helps with: 4 + 5 cards */
+.pm-helps-grid {
+  display: grid;
+  grid-template-columns: calc(190 * var(--u)) 1fr;
+  align-items: center;
+}
+.pm-help-cards {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: calc(9 * var(--u));
+}
+.pm-help {
+  grid-column: span 5;
+  display: flex;
+  align-items: flex-start;
+  gap: calc(10 * var(--u));
+  padding: calc(9 * var(--u)) calc(10 * var(--u));
+  border: calc(1 * var(--u)) solid #d2d3d7;
+  border-radius: calc(4 * var(--u));
+  background: #fff;
+}
+.pm-help:nth-child(n + 5) {
+  grid-column: span 4;
+}
+.pm-help .hw-ico {
+  width: calc(26 * var(--u));
+  height: calc(26 * var(--u));
+}
+.pm-help h3 {
+  font: 800 calc(13.5 * var(--u)) / 1 var(--hw-cond);
+}
+.pm-help p {
+  margin-top: calc(4 * var(--u));
+  font-size: calc(9.2 * var(--u));
+  line-height: calc(11.5 * var(--u));
+  color: var(--hw-text);
+}
+
+/* End-to-end support */
+.pm-support-grid {
+  display: grid;
+  grid-template-columns: calc(150 * var(--u)) repeat(3, minmax(0, 1fr));
+  column-gap: calc(12 * var(--u));
+  align-items: stretch;
+}
+.pm-support-grid > div:first-child {
+  align-self: center;
+}
+.pm-stage {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  border: calc(1 * var(--u)) solid #d2d3d7;
+  border-radius: calc(4 * var(--u));
+  overflow: hidden;
+  background: #fff;
+}
+.pm-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pm-stage-body {
+  padding: calc(10 * var(--u)) calc(10 * var(--u)) calc(12 * var(--u));
+}
+.pm-stage h3 {
+  display: flex;
+  align-items: center;
+  gap: calc(7 * var(--u));
+  font: 800 calc(17 * var(--u)) / 1 var(--hw-cond);
+  white-space: nowrap;
+}
+.pm-stage h3 .hw-ico {
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+}
+.pm-stage ul {
+  display: grid;
+  gap: calc(4 * var(--u));
+  margin-top: calc(8 * var(--u));
+  font-size: calc(9 * var(--u));
+  line-height: calc(11.5 * var(--u));
+  color: var(--hw-text);
+}
+.pm-stage li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(7 * var(--u));
+}
+.pm-stage .hw-check {
+  margin-top: calc(1.5 * var(--u));
+}
+
+/* Plans: lead line under title */
+.pm-plan-lead {
+  margin-top: calc(9 * var(--u));
+  font-size: calc(10 * var(--u));
+  line-height: calc(13 * var(--u));
+  color: var(--hw-text);
+}
+.pm .ap-plan ul {
+  margin-top: calc(7 * var(--u));
+}
+
+/* Management can include: no link hover */
+.pm-include .ap-related-item h3 {
+  transition: none;
+}
+
+/* Tablet and mobile */
+@media (max-width: 899.98px) {
+  .pm-why,
+  .pm-helps,
+  .pm-support {
+    padding-block: 40px;
+  }
+  .pm-why-grid,
+  .pm-helps-grid,
+  .pm-support-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pm-why-grid > div:first-child,
+  .pm-helps-grid > div:first-child,
+  .pm-support-grid > div:first-child {
+    margin-bottom: 8px;
+  }
+  .pm-why-card {
+    height: auto;
+    min-height: 140px;
+  }
+  .pm-why-card .ap-card-body h3 {
+    font-size: 20px;
+  }
+  .pm-why-card .ap-card-body p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pm-help-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .pm-help,
+  .pm-help:nth-child(n + 5) {
+    grid-column: auto;
+    padding: 14px;
+  }
+  .pm-help h3 {
+    font-size: 17px;
+  }
+  .pm-help p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .pm-stage {
+    grid-template-columns: 30% 1fr;
+  }
+  .pm-stage-body {
+    padding: 14px;
+  }
+  .pm-stage h3 {
+    font-size: 20px;
+  }
+  .pm-stage ul {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .pm-plan-lead {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 640px) {
+  .pm-help-cards {
+    grid-template-columns: 1fr;
+  }
+}
