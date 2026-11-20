@@ -1,4 +1,4 @@
-name: Deploy Chicagoland Podcast Studio
+name: Deploy Chicagoland Podcast Studio to GitHub Pages
 
 on:
   push:
@@ -6,25 +6,49 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-chicagoland
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
 
 jobs:
-  deploy:
-    name: Deploy to Hostinger VPS
+  build:
+    name: Build static site
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger VPS Zero-Downtime Deployment
-        uses: appleboy/ssh-action@v1.2.2
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          host: 72.61.0.11
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            set -euo pipefail
-            cd /root/Chicagoland-Podcast-Studio
-            git fetch origin main
-            git checkout -B main origin/main
-            git pull --ff-only origin main
-            /root/deploy-chicagoland.sh
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

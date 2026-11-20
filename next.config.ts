@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    agentFeedback: true,
-    agentUpgrade: "security",
+  output: "export",
+  basePath: "/Chicagoland-Podcast-Studio",
+  images: {
+    unoptimized: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
+  trailingSlash: true,
 };
 
 export default nextConfig;
